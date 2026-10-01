@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="sw" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>S&M Investment & Commercial Agency | Mwanza, Tanzania</title>
+<meta name="description" content="Kuunganisha wawekezaji wa ndani na kimataifa na wafanyabiashara na wachimbaji madini walioidhinishwa katika zimwi za Dhahabu za Ziwa Victoria — Geita, Shinyanga na Kagera." />
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy:  { 950:'#070D18', 900:'#0A1628', 800:'#0E1F38', 700:'#143050', 600:'#1D416B' },
+          gold:  { 300:'#F0DA96', 400:'#E3C567', 500:'#D4AF37', 600:'#B8962E', 700:'#94761F' },
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'serif'],
+          sans:  ['Manrope', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- AOS (Animate On Scroll) -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Typed.js + Lucide Icons -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; }
+
+  /* ===== Preloader ===== */
+  #preloader{position:fixed;inset:0;z-index:9999;background:#0A1628;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s;}
+  #preloader.hide{opacity:0;visibility:hidden;}
+  .loader-ring{width:70px;height:70px;border:3px solid rgba(212,175,55,.2);border-top-color:#D4AF37;border-radius:50%;animation:spin 1s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ===== Glassmorphism Navbar ===== */
+  .glass{background:rgba(10,22,40,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.15);}
+
+  /* ===== Hero animated gradient blobs ===== */
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;animation:float 12s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.1)}66%{transform:translate(-30px,25px) scale(.95)}}
+
+  /* ===== Gold gradient text ===== */
+  .text-gold-grad{background:linear-gradient(120deg,#F0DA96,#D4AF37 45%,#94761F);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  /* ===== Section heading ornament ===== */
+  .ornament::after{content:'';display:block;width:70px;height:3px;margin:14px auto 0;border-radius:9px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);}
+
+  /* ===== Card hover lift ===== */
+  .lift{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;}
+  .lift:hover{transform:translateY(-8px);box-shadow:0 22px 45px -18px rgba(7,13,24,.45);}
+
+  /* ===== Gold shine on buttons ===== */
+  .btn-gold{position:relative;overflow:hidden;background:linear-gradient(120deg,#B8962E,#D4AF37,#E3C567);}
+  .btn-gold::before{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .6s;}
+  .btn-gold:hover::before{left:125%;}
+
+  /* ===== Timeline (process) ===== */
+  .step-line::before{content:'';position:absolute;left:24px;top:56px;bottom:-34px;width:2px;background:linear-gradient(#D4AF37,rgba(212,175,55,.15));}
+
+  /* ===== Marquee (regions strip) ===== */
+  .marquee{display:flex;gap:3rem;white-space:nowrap;animation:slide 22s linear infinite;}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* WhatsApp pulse */
+  .pulse{animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+</style>
+</head>
+
+<body class="bg-navy-950 text-slate-200 antialiased selection:bg-gold-500 selection:text-navy-950">
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader"><div class="loader-ring"></div></div>
+
+<!-- ================= NAVBAR ================= -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-3 group">
+      <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center font-serif font-bold text-navy-950 text-lg shadow-lg shadow-gold-500/20 group-hover:rotate-6 transition">S&M</div>
+      <div class="leading-tight">
+        <p class="font-serif font-bold text-white text-[15px] tracking-wide">S&M Investment</p>
+        <p class="text-[11px] text-gold-400 tracking-[.22em] uppercase">& Commercial Agency</p>
+      </div>
+    </a>
+    <!-- Desktop links -->
+    <ul class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+      <li><a href="#home" class="hover:text-gold-400 transition">Nyumbani</a></li>
+      <li><a href="#kutuhusu" class="hover:text-gold-400 transition">Kutuhusu</a></li>
+      <li><a href="#divisions" class="hover:text-gold-400 transition">Idara Zetu</a></li>
+      <li><a href="#huduma" class="hover:text-gold-400 transition">Huduma</a></li>
+      <li><a href="#mchakato" class="hover:text-gold-400 transition">Mchakato</a></li>
+      <li><a href="#wasiliana" class="hover:text-gold-400 transition">Wasiliana</a></li>
+    </ul>
+    <a href="#wasiliana" class="hidden lg:inline-flex btn-gold text-navy-950 font-bold text-sm px-6 py-3 rounded-full shadow-lg shadow-gold-600/25 hover:shadow-gold-500/40 transition">
+      Pata Ushauri Sasa
+    </a>
+    <!-- Mobile toggle -->
+    <button id="menuBtn" class="lg:hidden text-gold-400" aria-label="Fungua menyu">
+      <i data-lucide="menu" class="w-7 h-7"></i>
+    </button>
+  </nav>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden glass">
+    <ul class="px-6 py-5 space-y-4 text-slate-200 font-semibold">
+      <li><a href="#home" class="block hover:text-gold-400">Nyumbani</a></li>
+      <li><a href="#kutuhusu" class="block hover:text-gold-400">Kutuhusu</a></li>
+      <li><a href="#divisions" class="block hover:text-gold-400">Idara Zetu</a></li>
+      <li><a href="#huduma" class="block hover:text-gold-400">Huduma</a></li>
+      <li><a href="#mchakato" class="block hover:text-gold-400">Mchakato</a></li>
+      <li><a href="#wasiliana" class="block hover:text-gold-400">Wasiliana</a></li>
+      <li><a href="#wasiliana" class="btn-gold block text-center text-navy-950 font-bold py-3 rounded-full">Pata Ushauri Sasa</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-navy-900">
+  <!-- Animated blobs -->
+  <div class="blob w-[520px] h-[520px] bg-gold-600 -top-40 -right-32"></div>
+  <div class="blob w-[420px] h-[420px] bg-navy-600 bottom-0 -left-24" style="animation-delay:-4s"></div>
+  <div class="blob w-[300px] h-[300px] bg-gold-700 top-1/3 left-1/2" style="animation-delay:-8s"></div>
+  <!-- Grid overlay -->
+  <div class="absolute inset-0 opacity-[.05]" style="background-image:linear-gradient(#D4AF37 1px,transparent 1px),linear-gradient(90deg,#D4AF37 1px,transparent 1px);background-size:64px 64px;"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-20 grid lg:grid-cols-2 gap-14 items-center">
+    <div data-aos="fade-right">
+      <div class="inline-flex items-center gap-2 border border-gold-500/40 rounded-full px-4 py-1.5 text-xs tracking-[.2em] uppercase text-gold-400 mb-7">
+        <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+        Mwanza • Tanzania
+      </div>
+      <h1 class="font-serif text-4xl sm:text-5xl xl:text-6xl font-bold text-white leading-[1.12]">
+        Uwekezaji wa <span class="text-gold-grad">Dhahabu</span> —
+        Unaotanguliza <span class="typed text-gold-grad"></span>
+      </h1>
+      <p class="mt-6 text-slate-300/90 text-lg leading-relaxed max-w-xl">
+        S&M Investment & Commercial Agency inaunganisha <strong class="text-white">wawekezaji wa ndani na kimataifa</strong>
+        na wafanyabiashara na wachimbaji madini walioidhinishwa katika Zimwi za Dhahabu za Ziwa Victoria —
+        <strong class="text-gold-400">Geita, Shinyanga na Kagera</strong> — kwa uadilifu, weledi wa kisheria, na ushauri wa kiuchumi.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#wasiliana" class="btn-gold text-navy-950 font-bold px-8 py-4 rounded-full shadow-xl shadow-gold-600/30 hover:-translate-y-0.5 transition">
+          Anza Uwekezaji <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+        </a>
+        <a href="#huduma" class="border border-slate-500/50 hover:border-gold-400 hover:text-gold-400 font-semibold px-8 py-4 rounded-full transition">
+          Huduma Zetu
+        </a>
+      </div>
+      <!-- Trust row -->
+      <div class="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm text-slate-400">
+        <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i> Walioidhinishwa kisheria</span>
+        <span class="flex items-center gap-2"><i data-lucide="lock" class="w-5 h-5 text-gold-400"></i> Usiri wa hali ya juu (NDA)</span>
+        <span class="flex items-center gap-2"><i data-lucide="handshake" class="w-5 h-5 text-gold-400"></i> Ushauri wa pande zote</span>
+      </div>
+    </div>
+
+    <!-- Hero visual card -->
+    <div class="relative hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+      <div class="relative rounded-3xl border border-gold-500/25 bg-gradient-to-br from-navy-800 to-navy-950 p-9 shadow-2xl">
+        <div class="flex items-center justify-between mb-8">
+          <p class="text-xs tracking-[.25em] uppercase text-slate-400">Madeni Makuu</p>
+          <i data-lucide="gem" class="w-6 h-6 text-gold-400"></i>
+        </div>
+        <div class="space-y-5">
+          <div class="flex items-center gap-4 p-4 rounded-xl bg-white/[.04] border border-white/5 lift">
+            <div class="w-12 h-12 rounded-lg bg-gold-500/15 grid place-items-center"><i data-lucide="pickaxe" class="w-6 h-6 text-gold-400"></i></div>
+            <div><p class="font-bold text-white">Dhahabu (Gold)</p><p class="text-sm text-slate-400">Geita • Shinyanga • Kagera</p></div>
+            <span class="ml-auto text-xs font-bold text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full">Imethibitishwa</span>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-xl bg-white/[.04] border border-white/5 lift">
+            <div class="w-12 h-12 rounded-lg bg-gold-500/15 grid place-items-center"><i data-lucide="layers" class="w-6 h-6 text-gold-400"></i></div>
+            <div><p class="font-bold text-white">Nikeli & Shaba</p><p class="text-sm text-slate-400">Fursa zinazokua</p></div>
+            <span class="ml-auto text-xs font-bold text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full">Inapitiwa</span>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-xl bg-white/[.04] border border-white/5 lift">
+            <div class="w-12 h-12 rounded-lg bg-gold-500/15 grid place-items-center"><i data-lucide="scale" class="w-6 h-6 text-gold-400"></i></div>
+            <div><p class="font-bold text-white">Leseni & Urithi</p><p class="text-sm text-slate-400">Ushauri wa kisheria — Adv. Masanja Salum</p></div>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+          <div><p class="text-2xl font-bold text-gold-grad font-serif">98%</p><p class="text-xs text-slate-400">Kiwango cha usalama wa data</p></div>
+          <div><p class="text-2xl font-bold text-gold-grad font-serif">3</p><p class="text-xs text-slate-400">Mikoa ya kimkakati</p></div>
+          <div><p class="text-2xl font-bold text-gold-grad font-serif">24h</p><p class="text-xs text-slate-400">Muda wa majibu</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE STRIP ================= -->
+<div class="bg-navy-950 border-y border-gold-500/15 py-4 overflow-hidden">
+  <div class="marquee text-sm tracking-[.3em] uppercase text-slate-500">
+    <span>◆ Geita</span><span class="text-gold-500">◆ Shinyanga</span><span>◆ Kagera</span><span class="text-gold-500">◆ Mwanza</span>
+    <span>◆ Geita</span><span class="text-gold-500">◆ Shinyanga</span><span>◆ Kagera</span><span class="text-gold-500">◆ Mwanza</span>
+    <span>◆ Geita</span><span class="text-gold-500">◆ Shinyanga</span><span>◆ Kagera</span><span class="text-gold-500">◆ Mwanza</span>
+    <span>◆ Geita</span><span class="text-gold-500">◆ Shinyanga</span><span>◆ Kagera</span><span class="text-gold-500">◆ Mwanza</span>
+  </div>
+</div>
+
+<!-- ================= STATS ================= -->
+<section class="bg-white text-navy-900 py-16">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+    <div data-aos="zoom-in"><p class="font-serif text-5xl font-bold text-navy-800 counter" data-target="7">0</p><p class="mt-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">Miaka ya Uzoefu</p></div>
+    <div data-aos="zoom-in" data-aos-delay="100"><p class="font-serif text-5xl font-bold text-navy-800 counter" data-target="120" data-suffix="+">0</p><p class="mt-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">Miradi Iliyounganishwa</p></div>
+    <div data-aos="zoom-in" data-aos-delay="200"><p class="font-serif text-5xl font-bold text-navy-800 counter" data-target="45" data-suffix="+">0</p><p class="mt-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">Wawekezaji Wenzi</p></div>
+    <div data-aos="zoom-in" data-aos-delay="300"><p class="font-serif text-5xl font-bold text-navy-800 counter" data-target="3">0</p><p class="mt-2 text-sm font-semibold text-slate-500 uppercase tracking-wider">Mikoa ya Uwajibikaji</p></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="kutuhusu" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div data-aos="fade-right">
+        <p class="text-xs font-bold tracking-[.3em] uppercase text-gold-600 mb-3">Kutuhusu Sisi</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 leading-tight ornament">Mwongozo wa Kuaminika katika Sekta ya Madini Tanzania</h2>
+        <p class="mt-6 text-slate-600 leading-relaxed">
+          <strong class="text-navy-900">S&M Investment & Commercial Agency</strong> ni kampuni ya ushauri wa uwekezaji na wakala wa kibiashara
+          iliyoundwa kwa modeli ya pande mbili — tunawakilisha <strong>wawekezaji</strong> wanaotafuta fursa salama na za kuthibitishwa,
+          na kwa upande mwingine tunawasaidia <strong>wachimbaji madini na wafanyabiashara wa ndani</strong> kupata mtaji, masoko,
+          na ushauri wa kisheria unaowezesha ukuaji endelevu.
+        </p>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Makao makuu yetu ni <strong class="text-navy-900">Mwanza</strong>, na eneo letu la uwajibikaji ni Zimwi za Dhahabu za Ziwa Victoria:
+          Geita, Shinyanga na Kagera. Kila fursa tunayoibua hupitia uthibitisho wa leseni na utaratibu wa siri (NDA) kabla ya kufikishwa kwa mwekezaji.
+        </p>
+        <!-- Founders -->
+        <div class="mt-10 grid sm:grid-cols-2 gap-5">
+          <div class="p-6 rounded-2xl bg-navy-900 text-white lift">
+            <div class="w-12 h-12 rounded-full bg-gold-500/20 grid place-items-center mb-4"><i data-lucide="user" class="w-6 h-6 text-gold-400"></i></div>
+            <p class="font-serif font-bold text-lg">Sadick Faraji</p>
+            <p class="text-sm text-gold-400 font-semibold">Co-Founder & CEO</p>
+            <p class="text-sm text-slate-400 mt-2">Mkakati wa uwekezaji, uendeshaji na uhusiano na wawekezaji.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-navy-900 text-white lift">
+            <div class="w-12 h-12 rounded-full bg-gold-500/20 grid place-items-center mb-4"><i data-lucide="scale" class="w-6 h-6 text-gold-400"></i></div>
+            <p class="font-serif font-bold text-lg">Adv. Masanja Salum</p>
+            <p class="text-sm text-gold-400 font-semibold">Co-Founder & Head of Legal</p>
+            <p class="text-sm text-slate-400 mt-2">Ushauri wa kisheria, leseni na ufuasi wa udhibiti (regulatory compliance).</p>
+          </div>
+        </div>
+      </div>
+      <!-- Vision / Mission / Values -->
+      <div class="space-y-6" data-aos="fade-left">
+        <div class="p-8 rounded-2xl border border-slate-200 shadow-sm lift bg-white">
+          <div class="flex items-center gap-4 mb-3"><div class="w-11 h-11 rounded-xl bg-gold-500/15 grid place-items-center"><i data-lucide="eye" class="w-5 h-5 text-gold-600"></i></div><h3 class="font-serif font-bold text-xl text-navy-900">Dira Yetu</h3></div>
+          <p class="text-slate-600">Kuwa daraja la kwanza na la kuaminika zaidi linalounganisha mtaji wa kimataifa na fursa halisi za madini za Tanzania.</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-slate-200 shadow-sm lift bg-white">
+          <div class="flex items-center gap-4 mb-3"><div class="w-11 h-11 rounded-xl bg-gold-500/15 grid place-items-center"><i data-lucide="target" class="w-5 h-5 text-gold-600"></i></div><h3 class="font-serif font-bold text-xl text-navy-900">Dhamira Yetu</h3></div>
+          <p class="text-slate-600">Kuwezesha uwekezaji salama, wa kisheria na wenye thamani ya pande zote mbili kupitia ushauri wa kitaalamu na uthibitisho wa kina.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-navy-900 text-white shadow-sm lift">
+          <div class="flex items-center gap-4 mb-4"><div class="w-11 h-11 rounded-xl bg-gold-500/20 grid place-items-center"><i data-lucide="award" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif font-bold text-xl">Thamani Zetu</h3></div>
+          <div class="flex flex-wrap gap-3">
+            <span class="text-sm border border-gold-500/30 text-gold-300 px-4 py-1.5 rounded-full">Uadilifu</span>
+            <span class="text-sm border border-gold-500/30 text-gold-300 px-4 py-1.5 rounded-full">Usiri</span>
+            <span class="text-sm border border-gold-500/30 text-gold-300 px-4 py-1.5 rounded-full">Utaalamu</span>
+            <span class="text-sm border border-gold-500/30 text-gold-300 px-4 py-1.5 rounded-full">Uwajibikaji</span>
+            <span class="text-sm border border-gold-500/30 text-gold-300 px-4 py-1.5 rounded-full">Matokeo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUSINESS DIVISIONS ================= -->
+<section id="divisions" class="py-24 bg-navy-950 relative overflow-hidden">
+  <div class="blob w-[420px] h-[420px] bg-gold-700 top-0 right-0 opacity-20"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-[.3em] uppercase text-gold-500 mb-3">Idara Zetu</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white ornament">Nguzo Nne za Utaalamu Wetu</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- 1 -->
+      <div class="p-8 rounded-2xl bg-navy-800/70 border border-white/5 lift" data-aos="fade-up">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center mb-6"><i data-lucide="scale" class="w-7 h-7 text-navy-950"></i></div>
+        <h3 class="font-serif text-xl font-bold text-white mb-3">Ushauri wa Kisheria & Udhibiti</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Leseni za madini, makubaliano, ufuasi wa sheria za Mining Commission na ulinzi wa maslahi ya pande zote. Ikiongozwa na Adv. Masanja Salum.</p>
+      </div>
+      <!-- 2 -->
+      <div class="p-8 rounded-2xl bg-navy-800/70 border border-white/5 lift" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center mb-6"><i data-lucide="line-chart" class="w-7 h-7 text-navy-950"></i></div>
+        <h3 class="font-serif text-xl font-bold text-white mb-3">Ushauri wa Uchumi & Fedha</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Uchambuzi wa uwekezaji, tathmini ya miradi, mifano ya kifedha na ushauri wa hatari (risk assessment) kwa maamuzi yenye msingi.</p>
+      </div>
+      <!-- 3 -->
+      <div class="p-8 rounded-2xl bg-navy-800/70 border border-white/5 lift" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center mb-6"><i data-lucide="link" class="w-7 h-7 text-navy-950"></i></div>
+        <h3 class="font-serif text-xl font-bold text-white mb-3">Uwezeshaji & Ulinganishaji wa Uwekezaji</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Kuunganisha wawekezaji waliothibitishwa na miradi ya madini ya kuaminika kulingana na mtaji, mkoa na sekta.</p>
+      </div>
+      <!-- 4 -->
+      <div class="p-8 rounded-2xl bg-navy-800/70 border border-white/5 lift" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center mb-6"><i data-lucide="briefcase" class="w-7 h-7 text-navy-950"></i></div>
+        <h3 class="font-serif text-xl font-bold text-white mb-3">Wakala wa Kibiashara</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Uwakilishi wa kibiashara, utafutaji wa masoko, na usimamizi wa makubaliano ya biashara kwa niaba ya wadau.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES (split) ================= -->
+<section id="huduma" class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-[.3em] uppercase text-gold-600 mb-3">Huduma Zetu</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 ornament">Kwa Wawekezaji na Wafanyabiashara wa Ndani</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Investor services -->
+      <div class="bg-navy-900 rounded-3xl p-9 lg:p-11 lift" data-aos="fade-right">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-14 h-14 rounded-2xl bg-gold-500/15 grid place-items-center"><i data-lucide="globe-2" class="w-7 h-7 text-gold-400"></i></div>
+          <div><h3 class="font-serif text-2xl font-bold text-white">Huduma kwa Wawekezaji</h3><p class="text-sm text-gold-400">Domestic & International</p></div>
+        </div>
+        <ul class="space-y-4 text-slate-300">
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i> Fursa za uwekezaji zilizothibitishwa na leseni halali</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i> Maktaba salama ya nyaraka (Due Diligence & NDA)</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i> Ushauri wa kisheria na kifedha kuanzia hadi kufunga biashara</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i> Uwakilishi ardhini — Geita, Shinyanga, Kagera</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i> Usimamizi wa mazungumzo na muundo wa biashara</li>
+        </ul>
+        <a href="#wasiliana" class="mt-9 inline-flex items-center gap-2 text-gold-400 font-bold hover:gap-3 transition-all">Wasiliana nasi <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <!-- Local business services -->
+      <div class="bg-white rounded-3xl p-9 lg:p-11 border border-slate-200 shadow-sm lift" data-aos="fade-left">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-14 h-14 rounded-2xl bg-navy-900/5 grid place-items-center"><i data-lucide="pickaxe" class="w-7 h-7 text-gold-600"></i></div>
+          <div><h3 class="font-serif text-2xl font-bold text-navy-900">Huduma kwa Wafanyabiashara wa Ndani</h3><p class="text-sm text-gold-600 font-semibold">Wachimbaji & Wajasiriamali</p></div>
+        </div>
+        <ul class="space-y-4 text-slate-600">
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-600 shrink-0 mt-0.5"></i> Kuandaa miradi yenu kwa viwango vinavyovutia wawekezaji</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-600 shrink-0 mt-0.5"></i> Msaada wa kupata leseni na kuzitunza (Mining Commission)</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-600 shrink-0 mt-0.5"></i> Kuunganisha na wawekezaji waliothibitishwa kwa usalama</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-600 shrink-0 mt-0.5"></i> Usimamizi wa makubaliano na mikataba ya ushirikiano</li>
+          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-600 shrink-0 mt-0.5"></i> Ushauri wa kiendelezi — muundo wa biashara na ukuaji</li>
+        </ul>
+        <a href="#wasiliana" class="mt-9 inline-flex items-center gap-2 text-gold-700 font-bold hover:gap-3 transition-all">Sajili Mradi Wako <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="mchakato" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+      <p class="text-xs font-bold tracking-[.3em] uppercase text-gold-600 mb-3">Mchakato Wetu</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 ornament">Hatua Nne hadi Uwekezaji Salama</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="relative step-line" data-aos="fade-up">
+        <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 grid place-items-center font-serif font-bold text-lg mb-5">1</div>
+        <h3 class="font-bold text-lg text-navy-900 mb-2">Usajili & Wasifu</h3>
+        <p class="text-sm text-slate-600">Mchimbaji au mwekezaji anajisajili na kufafanua mahitaji yake kwa usalama kamili.</p>
+      </div>
+      <div class="relative step-line" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 grid place-items-center font-serif font-bold text-lg mb-5">2</div>
+        <h3 class="font-bold text-lg text-navy-900 mb-2">Uthibitisho & Due Diligence</h3>
+        <p class="text-sm text-slate-600">Timu yetu inathibitisha leseni, nyaraka na hali halisi ya mradi kabla ya hatua iliyofuata.</p>
+      </div>
+      <div class="relative step-line" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 grid place-items-center font-serif font-bold text-lg mb-5">3</div>
+        <h3 class="font-bold text-lg text-navy-900 mb-2">NDA & Ufunguo wa Nyaraka</h3>
+        <p class="text-sm text-slate-600">Baada ya NDA, mwekezaji anapata muhtasari wa kina wa mradi katika chumba salama cha nyaraka.</p>
+      </div>
+      <div class="relative" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-12 h-12 rounded-full bg-gold-500 text-navy-950 grid place-items-center font-serif font-bold text-lg mb-5 shadow-lg shadow-gold-500/40">4</div>
+        <h3 class="font-bold text-lg text-navy-900 mb-2">Ulinganishaji & Makubaliano</h3>
+        <p class="text-sm text-slate-600">Tunaandaa mazungumzo, muundo wa biashara na kusimamia kufungwa kwa biashara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<section class="relative py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 overflow-hidden">
+  <div class="blob w-[380px] h-[380px] bg-gold-600 -bottom-32 left-1/4 opacity-25"></div>
+  <div class="relative max-w-4xl mx-auto px-5 text-center" data-aos="zoom-in">
+    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Una Mradi au Unaotafuta Fursa?</h2>
+    <p class="mt-4 text-slate-300 text-lg">Timu ya S&M iko tayari kukusaidia kwa ushauri wa bure wa awali — pande zote mbili zinalindwa.</p>
+    <div class="mt-9 flex flex-wrap justify-center gap-4">
+      <a href="#wasiliana" class="btn-gold text-navy-950 font-bold px-9 py-4 rounded-full shadow-xl shadow-gold-600/30 hover:-translate-y-0.5 transition">Anza Mazungumzo Leo</a>
+      <a href="https://wa.me/255700000000" target="_blank" rel="noopener" class="border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-navy-950 font-semibold px-9 py-4 rounded-full transition">Zungumza WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="wasiliana" class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-5 gap-12">
+    <!-- Info -->
+    <div class="lg:col-span-2" data-aos="fade-right">
+      <p class="text-xs font-bold tracking-[.3em] uppercase text-gold-600 mb-3">Wasiliana Nasi</p>
+      <h2 class="font-serif text-3xl font-bold text-navy-900 ornament text-left" style="margin-left:0">Tufikie — Tunajibu ndani ya Masaa 24</h2>
+      <div class="mt-10 space-y-6">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-navy-900 grid place-items-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-gold-400"></i></div>
+          <div><p class="font-bold text-navy-900">Ofisi Yetu</p><p class="text-slate-600 text-sm">Mwanza, Tanzania — Zimwi za Dhahabu za Ziwa Victoria (Geita • Shinyanga • Kagera)</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-navy-900 grid place-items-center shrink-0"><i data-lucide="mail" class="w-5 h-5 text-gold-400"></i></div>
+          <div><p class="font-bold text-navy-900">Barua Pepe</p><p class="text-slate-600 text-sm">info@smagency.co.tz</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-navy-900 grid place-items-center shrink-0"><i data-lucide="phone" class="w-5 h-5 text-gold-400"></i></div>
+          <div><p class="font-bold text-navy-900">Simu</p><p class="text-slate-600 text-sm">+255 700 000 000</p></div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-xl bg-navy-900 grid place-items-center shrink-0"><i data-lucide="clock" class="w-5 h-5 text-gold-400"></i></div>
+          <div><p class="font-bold text-navy-900">Saa za Kazi</p><p class="text-slate-600 text-sm">Jumatatu – Ijumaa: 8:00 – 17:00 • Jumamosi: 9:00 – 13:00</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="lg:col-span-3" data-aos="fade-left">
+      <form id="inquiryForm" class="bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-sm space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-bold text-navy-900 mb-2">Jina Kamili *</label>
+            <input required type="text" name="jina" placeholder="Mf. John Mwakasege" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-navy-900 mb-2">Barua Pepe *</label>
+            <input required type="email" name="email" placeholder="jina@mfano.com" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-bold text-navy-900 mb-2">Namba ya Simu</label>
+            <input type="tel" name="simu" placeholder="+255 ..." class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-navy-900 mb-2">Natuma Kama *</label>
+            <select required name="role" class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-navy-900 bg-white focus:outline-none focus:ring-2 focus:ring-gold-500 transition">
+              <option value="" disabled selected>Chagua...</option>
+              <option>Investor (Mwekezaji)</option>
+              <option>Miner / License Holder (Mchimbaji)</option>
+              <option>Local Entrepreneur (Mjasiriamali)</option>
+              <option>Nyingine</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-navy-900 mb-2">Ujumbe Wako *</label>
+          <textarea required name="ujumbe" rows="5" placeholder="Tueleze kuhusu mradi wako au fursa unayotafuta..." class="w-full rounded-xl border border-slate-300 px-4 py-3.5 text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition resize-none"></textarea>
+        </div>
+        <p class="text-xs text-slate-500 flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-gold-600"></i> Taarifa zako zinalindwa kwa usiri wa hali ya juu, zinazingatiwa kwa Sheria ya Ulindaji wa Taarifa Binafsi, 2022.</p>
+        <button type="submit" class="btn-gold w-full text-navy-950 font-bold py-4 rounded-xl shadow-lg shadow-gold-600/25 hover:-translate-y-0.5 transition flex items-center justify-center gap-2">
+          Tuma Ujumbe <i data-lucide="send" class="w-4 h-4"></i>
+        </button>
+        <div id="formSuccess" class="hidden text-center p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-navy-950 border-t border-white/5 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-700 grid place-items-center font-serif font-bold text-navy-950">S&M</div>
+          <div><p class="font-serif font-bold text-white">S&M Investment</p><p class="text-[11px] text-gold-400 tracking-[.22em] uppercase">& Commercial Agency</p></div>
+        </div>
+        <p class="text-sm text-slate-400 max-w-md leading-relaxed">Kuunganisha wawekezaji na fursa halisi za madini Tanzania kwa uadilifu, utaalamu wa kisheria na ushauri wa kiuchumi. Mwanza • Geita • Shinyanga • Kagera.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 grid place-items-center transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 grid place-items-center transition"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 grid place-items-center transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 grid place-items-center transition"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <p class="font-bold text-white mb-5">Viungo Vya Haraka</p>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#kutuhusu" class="hover:text-gold-400 transition">Kutuhusu</a></li>
+          <li><a href="#divisions" class="hover:text-gold-400 transition">Idara Zetu</a></li>
+          <li><a href="#huduma" class="hover:text-gold-400 transition">Huduma</a></li>
+          <li><a href="#mchakato" class="hover:text-gold-400 transition">Mchakato</a></li>
+          <li><a href="#wasiliana" class="hover:text-gold-400 transition">Wasiliana</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-white mb-5">Mawasiliano</p>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-500 mt-0.5 shrink-0"></i> Mwanza, Tanzania</li>
+          <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 text-gold-500 mt-0.5 shrink-0"></i> info@smagency.co.tz</li>
+          <li class="flex gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-500 mt-0.5 shrink-0"></i> +255 700 000 000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© <span id="year"></span> S&M Investment & Commercial Agency. Haki zote zimehifadhiwa.</p>
+      <p>Siri • Uadilifu • Matokeo</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a href="https://wa.me/255700000000?text=Habari%20S%26M%2C%20ningependa%20kujifunza%20zaidi%20kuhusu%20huduma%20zenu."
+   target="_blank" rel="noopener" aria-label="WhatsApp"
+   class="pulse fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-2xl hover:scale-110 transition">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+</a>
+
+<!-- ================= BACK TO TOP ================= -->
+<button id="toTop" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-navy-800 border border-gold-500/30 text-gold-400 grid place-items-center opacity-0 pointer-events-none transition" aria-label="Rudi juu">
+  <i data-lucide="arrow-up" class="w-5 h-5"></i>
+</button>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  /* ---------- Init libraries ---------- */
+  AOS.init({ duration: 800, once: true, offset: 80 });
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Preloader ---------- */
+  window.addEventListener('load', () => document.getElementById('preloader').classList.add('hide'));
+
+  /* ---------- Typed effect ---------- */
+  new Typed('.typed', {
+    strings: ['Una Heshima.', 'Una Uwazi.', 'Una Matokeo.', 'Ina Pande Zote Binafsi.'],
+    typeSpeed: 60, backSpeed: 32, backDelay: 1600, loop: true, smartBackspace: true
+  });
+
+  /* ---------- Navbar glass on scroll ---------- */
+  const navbar = document.getElementById('navbar');
+  const toTop  = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('glass', window.scrollY > 40);
+    const show = window.scrollY > 500;
+    toTop.classList.toggle('opacity-0', !show);
+    toTop.classList.toggle('pointer-events-none', !show);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ---------- Mobile menu ---------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  /* ---------- Animated counters (IntersectionObserver) ---------- */
+  const counters = document.querySelectorAll('.counter');
+  const runCounter = (el) => {
+    const target = +el.dataset.target, suffix = el.dataset.suffix || '';
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const tick = () => {
+      current = Math.min(current + step, target);
+      el.textContent = current + suffix;
+      if (current < target) requestAnimationFrame(tick);
+    };
+    tick();
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); io.unobserve(e.target); } });
+  }, { threshold: .6 });
+  counters.forEach(c => io.observe(c));
+
+  /* ---------- Contact form → WhatsApp handoff ----------
+     (Backend yako ya FastAPI inaweza kuchukua data hii baadaye — kwa sasa inaelekeza kwa WhatsApp moja kwa moja) */
+  document.getElementById('inquiryForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const f = new FormData(this);
+    const msg = `*Ujumbe Kutoka Tovuti — S&M Agency*%0A%0A*Jina:* ${f.get('jina')}%0A*Barua pepe:* ${f.get('email')}%0A*Simu:* ${f.get('simu') || '-'}%0A*Natuma kama:* ${f.get('role')}%0A%0A*Ujumbe:*%0A${f.get('ujumbe')}`;
+    const success = document.getElementById('formSuccess');
+    success.textContent = 'Asante! Inakupeleka kwa WhatsApp yetu...';
+    success.classList.remove('hidden');
+    setTimeout(() => window.open(`https://wa.me/255700000000?text=${msg}`, '_blank'), 900);
+    this.reset();
+  });
+</script>
+</body>
+</html>
