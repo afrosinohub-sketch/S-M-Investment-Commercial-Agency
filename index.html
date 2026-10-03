@@ -1044,7 +1044,7 @@ const isJV=f.get('mgoal')==='joint_venture',goal=isJV?d.mwa_goal_jv:d.mwa_goal_s
 const aLabel=isJV?d.mwa_capital:d.mwa_price,aVal=isJV?(f.get('mcapital')||'-'):(f.get('mprice')||'-');
 const msg=`*${encodeURIComponent(d.mwa_header)}*%0A%0A*${d.mwa_name}:* ${encodeURIComponent(f.get('mowner'))}%0A*${d.mwa_phone}:* ${encodeURIComponent(f.get('mphone'))}%0A*${d.mwa_region}:* ${encodeURIComponent(region)}%0A*${d.mwa_license}:* ${encodeURIComponent(f.get('mlicense'))}%0A*${d.mwa_goal}:* ${encodeURIComponent(goal)}%0A*${aLabel}:* ${encodeURIComponent(aVal)}%0A%0A*${d.mwa_desc}:*%0A${encodeURIComponent(f.get('mdesc')||'-')}`;
 const s=document.getElementById('minerSuccess');s.textContent=d.mp_success;s.classList.remove('hidden');
-setTimeout(()=>window.open(`https://wa.me/255700000000?text=${msg}`,'_blank'),900);this.reset();syncGoal()});
+setTimeout(()=>window.open(`https://wa.me/255764920849?text=${msg}`,'_blank'),900);this.reset();syncGoal()});
 
 /* INVESTOR FILTERS */
 const filterType=document.getElementById('filterType'),filterRegion=document.getElementById('filterRegion'),
@@ -1057,7 +1057,7 @@ filterType.addEventListener('change',applyFilters);filterRegion.addEventListener
 /* NDA MODAL */
 const ndaModal=document.getElementById('ndaModal');
 function openNda(t){document.getElementById('ndaProject').textContent=t;const d=I18N[currentLang];
-document.getElementById('ndaWaBtn').href=`https://wa.me/255700000000?text=${encodeURIComponent(d.mo_nda_prefix)}%20${encodeURIComponent(t)}`;
+document.getElementById('ndaWaBtn').href=`https://wa.me/255764920849?text=${encodeURIComponent(d.mo_nda_prefix)}%20${encodeURIComponent(t)}`;
 ndaModal.classList.remove('hidden');ndaModal.classList.add('flex');document.body.style.overflow='hidden'}
 function closeNda(){ndaModal.classList.add('hidden');ndaModal.classList.remove('flex');document.body.style.overflow=''}
 document.querySelectorAll('.nda-btn').forEach(b=>b.addEventListener('click',()=>openNda(b.closest('.p-card').querySelector('[data-card-title]').textContent.trim())));
